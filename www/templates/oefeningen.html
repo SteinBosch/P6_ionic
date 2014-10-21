@@ -1,0 +1,12 @@
+<ion-view title="Oefeningen">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="oefening in oefeningen" href="#/app/oefening/{{oefening.id}}">
+        <div class='score'>{{oefening.score}}</div> {{oefening.oefening}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
