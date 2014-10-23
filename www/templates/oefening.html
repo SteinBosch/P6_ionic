@@ -1,8 +1,24 @@
 <ion-view title="oefening">
   <ion-content class="has-header">
 	  <header class="single">
-	  	<div class="head_score"><div>{{oefeningen[stateParams[0].oefeningId].score}}</div></div>
+	  	<div class="head_score s{{oefeningen[stateParams[0].oefeningId].score}}"><div>{{oefeningen[stateParams[0].oefeningId].score}}</div></div>
 	  	<h1>{{oefeningen[stateParams[0].oefeningId].oefening}}</h1>
 	  </header>
+	  <div class="graph" data-graph="{{oefeningen[stateParams[0].oefeningId].details.all_scores}}">
+	  	<div class="count">
+	  	</div>
+	  	<div class="graph_points">
+	  	</div>
+	  </div>
+	  <div class="backlog" >
+	  	<div ng-repeat="log in oefeningen[[stateParams[0].oefeningId]].details.backlog" class="log">
+	  		<div class="log_score s{{log.fear_score}}"><div>{{log.fear_score}}</div></div>
+	  		<div class="middle s{{log.fear_score}}"></div>
+	  		<div class="text">
+	  			<div class="date">{{log.date}}</div>
+	  			<div class="backlog">{{log.log}}</div>
+	  		</div>
+	  	</div>
+	  </div>
   </ion-content>
 </ion-view>

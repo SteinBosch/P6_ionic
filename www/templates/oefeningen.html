@@ -4,8 +4,8 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="oefening in oefeningen" href="#/app/oefening/{{oefening.id}}">
-        <div class='score'>{{oefening.score}}</div> {{oefening.oefening}}
+      <ion-item class="list_oefeningen" ng-repeat="oefening in oefeningen" href="#/app/oefening/{{oefening.id}}">
+        <div class='list_score s{{oefening.score}}'>{{oefening.score}}</div><div class="list_oefening">{{oefening.oefening}}</div>
       </ion-item>
     </ion-list>
   </ion-content>

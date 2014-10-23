@@ -40,6 +40,19 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-family: 'open_sansbold';
 }
+
+/*All colours*/
+.s100 {background-color: #442d49;}
+.s90 {background-color: #66436d;}
+.s80 {background-color: #885991;}
+.s70 {background-color: #a03744;}
+.s60 {background-color: #c14f59;}
+.s50 {background-color: #e27a83;}
+.s40 {background-color: #e2a02b;}
+.s30 {background-color: #f3b64d;}
+.s20 {background-color: #2f8c5f;}
+.s10 {background-color: #3eba7f;}
+
 .bar.bar-stable {
 	background-color: #28bbe8;
 	border: none;
@@ -48,9 +61,39 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	color: #fdfdfd;
 }
 
+/*Lijst oefeningen */
+
+.list_oefeningen.item-complex .item-content{
+    padding: 0;
+}
+.list_score {
+    display: inline-block;
+    padding: 10px 0;
+    width: 40px;
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: center;
+    color: white;
+    font-family: 'open_sanssemibold';
+    font-size: 18px;
+    vertical-align: top;
+    -webkit-border-radius: 5em;
+    -moz-border-radius: 5em;
+    border-radius: 5em;
+}
+.list_oefening {
+    display: inline-block;
+    padding: 13px 0px 13px 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80%;
+}
+
+/*single oefening - header */
 .single {
 	height: 7em;
 	padding: 1em;
+    line-height: 5em;
 }
 .single .head_score {
 	width: 5em;
@@ -58,25 +101,105 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	-webkit-border-radius: 5em;
 	-moz-border-radius: 5em;
 	border-radius: 5em;
-	background-color: #e27a83;
 	display: inline-block;
 	vertical-align: top;
+    line-height: 5em;
 }
-.single .head_score div {
+
+.single .head_score div{
 	display: table;
 	margin: auto;
 	font-size: 2em;
-	top: 37%;
+	vertical-align: middle;
 	position: relative;
 	color: #fdfdfd;
 }
+
 .single h1 {
-	max-width: 285px;
-	font-size: 20px;
+	width: 65%;
+	font-size: 16px;
 	display: inline-block;
 	margin: 0;
     font-family: 'open_sanssemibold';
-
+    vertical-align: middle;
+    margin-left: 5%;
 }
 
-.score {display: inline-block;}
+/*single oefening - graph*/
+
+.graph {
+    height: 300px;
+    width: 100%;
+    position: relative;
+    padding: 1em;
+
+}
+.count {
+    float: left;
+}
+.count div {
+    line-height: 14px;
+    font-size: 16px;
+}
+.graph_points {
+    height: 100%;
+    width: 90%;
+    margin-left: 10%;
+    position: relative; 
+}
+.graph_point {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    -webkit-border-radius: 5em;
+    -moz-border-radius: 5em;
+    border-radius: 5em;
+    background-color: #454545;
+}
+
+
+/*single oefening - backlog*/
+
+.log {
+    padding: 1em;
+}
+.log_score {
+    width: 2em;
+    height: 2em;
+    -webkit-border-radius: 5em;
+    -moz-border-radius: 5em;
+    border-radius: 5em;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 42px;
+    margin-right: 10px;
+}
+.log_score div {
+    display: table;
+    margin: auto;
+    font-size: 20px;
+    top: 6px;
+    position: relative;
+    color: #fdfdfd;
+}
+.middle {
+    width: 5px;
+    height: 175px;
+    display: inline-block;
+}
+.text {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    width: 80%;
+}
+.date {
+    font-family: 'open_sanssemibold';
+    margin-top: 10px;
+    font-size: 15px;
+}
+.backlog {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
