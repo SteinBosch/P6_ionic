@@ -58,11 +58,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	background-color: #28bbe8;
 	border: none;
 }
+.bar.bar-header {
+    height: 70px !important;
+}
 .bar.bar-stable .title, .bar-stable .button.button-clear, .bar-stable .button {
 	color: #fdfdfd;
 }
 .button .icon {
-    color: white;   
+    color: white;
 }
 
 /*Lijst oefeningen */
@@ -191,7 +194,7 @@ div.graph_line {
     height: 100%;
     width: 90%;
     margin-left: 10%;
-    position: relative; 
+    position: relative;
     z-index: 10;
 }
 .graph_point {
