@@ -83,4 +83,46 @@ angular.module('starter.controllers', [])
   $scope.stateParams = [
     {oefeningId: $stateParams['oefeningId'] -1,},
   ]
+})
+
+.controller('serverCtrl',function ($scope,$http){
+ $http.get('/server/json.php').then(function(resp) {
+    console.log(resp.data);
+    $scope.posts = resp.data;
+    console.log($scope.posts);
+    // For JSON responses, resp.data contains the result
+  }, function(err) {
+    console.error('ERR', err);
+    // err.status will contain the status code
+  });
+  
+})
+
+.controller('patientCtrl',function ($scope,$http){
+  var url = "http://backend-p6:8888/api/TherapyGroup";
+  $http.get(url)
+      .success(function(data){
+          console.log(data);
+          $scope.list = data;
+      });
+  
+})
+
+.controller('postCtrl',function ($scope,$http){
+      $scope.master = {};
+
+      $scope.input = function(input) {
+        $scope.master = angular.copy(input);
+        console.log($scope.master);
+
+        $http.post("server/insert.php",{'post': $scope.master.text})
+        .success(function(data, status, headers, config){
+            console.log("inserted Successfully");
+            console.log(data); 
+        });
+      };
+
+    // }]);
 });
+
+;

@@ -36,6 +36,7 @@
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, i, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, fieldset, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	font-family: 'open_sansregular';
+    color: #454545;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-family: 'open_sansbold';
@@ -59,6 +60,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .bar.bar-stable .title, .bar-stable .button.button-clear, .bar-stable .button {
 	color: #fdfdfd;
+}
+.button .icon {
+    color: white;   
 }
 
 /*Lijst oefeningen */
@@ -126,26 +130,69 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 /*single oefening - graph*/
-
+.graph_header {
+    height: 4em;
+    width: 100%;
+    background-color: #f4f4e9;
+    padding: 1em;
+}
+.graph_header h2 {
+    font-size: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    margin-bottom: 0;
+}
+.graph_header .score {
+    width: 2em;
+    height: 2em;
+    -webkit-border-radius: 5em;
+    -moz-border-radius: 5em;
+    border-radius: 5em;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: -2px;
+}
+.graph_header .score div {
+    display: table;
+    margin: auto;
+    font-size: 20px;
+    top: 4px;
+    position: relative;
+    color: #fdfdfd;
+}
 .graph {
     height: 300px;
     width: 100%;
     position: relative;
     padding: 1em;
-
+    background-color: #f4f4e9;
 }
 .count {
     float: left;
+    width: 100%;
 }
-.count div {
+.count div.graph_numb {
     line-height: 14px;
     font-size: 16px;
+    position: relative;
 }
+
+div.graph_line {
+    display: block;
+    width: 93%;
+    height: 1px;
+    margin-left: 2em;
+    position: absolute;
+    top: 7px;
+    border-top: 1px dashed #e2e2e2;
+}
+
 .graph_points {
     height: 100%;
     width: 90%;
     margin-left: 10%;
     position: relative; 
+    z-index: 10;
 }
 .graph_point {
     position: absolute;
@@ -156,12 +203,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border-radius: 5em;
     background-color: #454545;
 }
-
+.graph_x-as {
+    border-top: 1px solid;
+    width: 90%;
+    margin-left: 6%;
+}
 
 /*single oefening - backlog*/
 
 .log {
     padding: 1em;
+    position: relative;
 }
 .log_score {
     width: 2em;
@@ -169,10 +221,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     -webkit-border-radius: 5em;
     -moz-border-radius: 5em;
     border-radius: 5em;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 42px;
-    margin-right: 10px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 .log_score div {
     display: table;
@@ -190,16 +242,40 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .text {
     display: inline-block;
     vertical-align: top;
-    margin-left: 10px;
-    width: 80%;
+    margin-left: 3em;
+    width: 87%;
+    border: 1px solid #A0A0A0;
+    padding: 1em;
+    background-color: white;
+}
+.log_text {
+    margin-top: 1em;
 }
 .date {
     font-family: 'open_sanssemibold';
-    margin-top: 10px;
     font-size: 15px;
 }
 .backlog {
-    margin-top: 10px;
+    margin-top: 2em;
+    margin-bottom: 2em;
     font-size: 16px;
+    position: relative;
 }
-
+.backlog_line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    border-left: 1px dashed #A0A0A0;
+    left: 2em;
+    z-index: -1;
+}
+.middle_line {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4em;
+    height: 1px;
+    border-top: 1px solid #A0A0A0;
+    z-index: -1;
+}

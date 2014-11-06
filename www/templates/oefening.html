@@ -4,19 +4,22 @@
 	  	<div class="head_score s{{oefeningen[stateParams[0].oefeningId].score}}"><div>{{oefeningen[stateParams[0].oefeningId].score}}</div></div>
 	  	<h1>{{oefeningen[stateParams[0].oefeningId].oefening}}</h1>
 	  </header>
+	  <div class="graph_header"></div>
 	  <div class="graph" data-graph="{{oefeningen[stateParams[0].oefeningId].details.all_scores}}">
 	  	<div class="count">
 	  	</div>
 	  	<div class="graph_points">
 	  	</div>
 	  </div>
+	  <div class="graph_x-as">Datum</div>
 	  <div class="backlog" >
+	  	<div class="backlog_line"></div>
 	  	<div ng-repeat="log in oefeningen[[stateParams[0].oefeningId]].details.backlog" class="log">
 	  		<div class="log_score s{{log.fear_score}}"><div>{{log.fear_score}}</div></div>
-	  		<div class="middle s{{log.fear_score}}"></div>
+	  		<div class="middle_line"></div>
 	  		<div class="text">
 	  			<div class="date">{{log.date}}</div>
-	  			<div class="backlog">{{log.log}}</div>
+	  			<div class="log_text">{{log.log}}</div>
 	  		</div>
 	  	</div>
 	  </div>
