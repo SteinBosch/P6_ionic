@@ -1,5 +1,6 @@
 var oefeningen = [
-    { oefening: 'Naar de wc gaan; zitten op de bril en niet mijn handen wassen en een broodje eten',
+    { oefening: 'Naar de wc gaan, zitten op de bril en een broodje eten',
+      responsprev: 'Niet mijn handen wassen',
       id: 1,
       score: 100,
       details: {
@@ -12,6 +13,7 @@ var oefeningen = [
       },
     },
     { oefening: 'Naar de wc gaan, zitten op de bril daarna nog handen wassen op niet dwangmatige manier', id: 2, score: 90,
+      responsprev: '',
       details: {
         all_scores: [90, 50, 70, 30, 30],
          backlog: [
@@ -20,10 +22,13 @@ var oefeningen = [
           {date: "22 mei 2014", fear_score: 70, log: "Ik heb mijn handen goed gewassen omdat het er wel vies uitzag, maar omdat de vorige keer erger was vond ik het nu beter gaan.",},
         ],
       }, },
-    { oefening: 'In de wc. aanraken van kranen, papierrol, prullenbak enz. niet handen wassen', id: 3, score: 80 },
+    { oefening: 'In de wc. aanraken van kranen, papierrol, prullenbak enz. niet handen wassen',
+      responsprev: 'Niet mijn handen wassen', id: 3, score: 80 },
     { oefening: 'In het ziekenhuis een broodje eten ', id: 4, score: 70 },
-    { oefening: 'Een broodje eten in het winkelcentrum na het aanraken van stoplichtknopjes zonder mijn handen te wassen', id: 5, score: 60 },
-    { oefening: 'Pinnen bij het winkelcentrum en niet mijn handen wassen', id: 6, score: 50,
+    { oefening: 'Een broodje eten in het winkelcentrum na het aanraken van stoplichtknopjes',
+      responsprev: 'Niet mijn handen wassen', id: 5, score: 60 },
+    { oefening: 'Pinnen bij het winkelcentrum', id: 6, score: 50,
+      responsprev: 'Niet mijn handen wassen',
       details: {
         all_scores: [50, 50, 70, 10, 90, 20, 60],
          backlog: [
@@ -33,9 +38,9 @@ var oefeningen = [
         ],
       }, },
     { oefening: 'Naar de wc gaan als ik moet (dus niet vermijden door ophouden)', id: 7, score: 40 },
-    { oefening: 'Aanraken van de kranen op de wc en niet mijn handen wassen', id: 8, score: 30 },
-    { oefening: 'Aanraken van de deurknoppen van de wc en niet mijn handen wassen', id: 9, score: 20 },
-    { oefening: 'Aanraken van de deurknoppen en trapleuningen en niet mijn handen wassen', id: 10, score: 10 },
+    { oefening: 'Aanraken van de kranen op de wc', responsprev: 'Niet mijn handen wassen', id: 8, score: 30 },
+    { oefening: 'Aanraken van de deurknoppen van de wc', responsprev: 'Niet mijn handen wassen', id: 9, score: 20 },
+    { oefening: 'Aanraken van de deurknoppen en trapleuningen', responsprev: 'Niet mijn handen wassen', id: 10, score: 10 },
   ];
   //console.log(oefeningen);
 
@@ -83,6 +88,23 @@ angular.module('starter.controllers', [])
   $scope.stateParams = [
     {oefeningId: $stateParams['oefeningId'] -1,},
   ]
+})
+
+.controller('addOefeningCtrl',function ($scope,$http){
+      $scope.master = {};
+
+      $scope.input = function(input) {
+        $scope.master = angular.copy(input);
+        console.log($scope.master);
+
+        $http.post("server/insert.php",{'post': $scope.master.text})
+        .success(function(data, status, headers, config){
+            console.log("inserted Successfully");
+            console.log(data); 
+        });
+      };
+
+    // }]);
 })
 
 .controller('serverCtrl',function ($scope,$http){

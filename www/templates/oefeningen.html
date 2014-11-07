@@ -2,10 +2,17 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <a class="button button-icon ion-plus" href="#/app/toevoegen"></a>
+  </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
       <ion-item class="list_oefeningen" ng-repeat="oefening in oefeningen" href="#/app/oefening/{{oefening.id}}">
-        <div class='list_score s{{oefening.score}}'>{{oefening.score}}</div><div class="list_oefening">{{oefening.oefening}}</div>
+        <div class='list_score s{{oefening.score}}'>{{oefening.score}}</div>
+        <div class="list_box">
+          <div class="list_oefening">{{oefening.oefening}}</div>
+          <div class="list_responsprev">{{oefening.responsprev}}</div>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>

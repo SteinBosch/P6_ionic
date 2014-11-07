@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	background-color: #28bbe8;
 	border: none;
 }
-.bar.bar-stable .title, .bar-stable .button.button-clear, .bar-stable .button {
+.bar.bar-stable .title, .bar-stable .button.button-clear, .bar-stable .button, .bar .title, .bar .button {
 	color: #fdfdfd;
 }
 .button .icon {
@@ -67,47 +67,66 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 /*Lijst oefeningen */
 
-.list_oefeningen.item-complex .item-content{
+.list_oefeningen a.item-content {
     padding: 0;
+    height: 5em;
+}
+.list_oefeningen:nth-child(even)  a{
+    background-color: #F4F4F4;
+}
+.list_oefeningen {
+    border: none;
 }
 .list_score {
-    display: inline-block;
     padding: 10px 0;
     width: 40px;
-    margin-top: 5px;
-    margin-left: 5px;
     text-align: center;
     color: white;
     font-family: 'open_sanssemibold';
     font-size: 18px;
-    vertical-align: top;
     -webkit-border-radius: 5em;
     -moz-border-radius: 5em;
     border-radius: 5em;
+    margin-left: 1em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 40px;
+    margin-left: 1em;
+}
+.list_box {
+    margin-left: 4em;
+    padding: 1em;
 }
 .list_oefening {
-    display: inline-block;
-    padding: 13px 0px 13px 10px;
-    text-overflow: ellipsis;
+    font-family: 'open_sansbold';
     overflow: hidden;
-    width: 80%;
+    text-overflow: ellipsis;
 }
+.list_responsprev {
+    color: #A0A0A0;
+    margin-top: 6px;
+}
+
 
 /*single oefening - header */
 .single {
 	height: 7em;
 	padding: 1em;
     line-height: 5em;
+    position: relative;
 }
 .single .head_score {
-	width: 5em;
-	height: 5em;
-	-webkit-border-radius: 5em;
-	-moz-border-radius: 5em;
-	border-radius: 5em;
-	display: inline-block;
-	vertical-align: top;
-    line-height: 5em;
+    width: 5em;
+    height: 5em;
+    -webkit-border-radius: 5em;
+    -moz-border-radius: 5em;
+    border-radius: 5em;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
 .single .head_score div{
@@ -118,16 +137,32 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	position: relative;
 	color: #fdfdfd;
 }
-
-.single h1 {
-	width: 65%;
-	font-size: 16px;
-	display: inline-block;
-	margin: 0;
-    font-family: 'open_sanssemibold';
-    vertical-align: middle;
-    margin-left: 5%;
+.head_box {
+    margin-left: 6em;
 }
+.single h1 {
+    font-size: 16px;
+    display: block;
+    margin: 0;
+    font-family: 'open_sanssemibold';
+    vertical-align: top;
+    line-height: normal;
+}
+.head_box span {
+    display: block;
+    line-height: normal;
+    margin-top: 0;
+    color: #a0a0a0;
+}
+
+/*.head_box {
+margin: auto;
+position: absolute;
+top: 0;
+bottom: 0;
+display: table;
+left: 7em;
+}*/
 
 /*single oefening - graph*/
 .graph_header {
@@ -250,6 +285,7 @@ div.graph_line {
 }
 .log_text {
     margin-top: 1em;
+    line-height: normal;
 }
 .date {
     font-family: 'open_sanssemibold';
@@ -278,4 +314,10 @@ div.graph_line {
     height: 1px;
     border-top: 1px solid #A0A0A0;
     z-index: -1;
+}
+
+/* Orange Theme */
+
+.orange_theme {
+    background-color: #FA6900;
 }
