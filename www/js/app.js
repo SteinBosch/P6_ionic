@@ -39,7 +39,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.dataservices
         }
       }
     })
-
     .state('app.oefening', {
       url: "/oefening/:oefeningId",
       views: {
@@ -48,7 +47,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.dataservices
           controller: "OefeningCtrl",
         },
       },
-    });
+    })
+    .state('app.toevoegen', {
+      url: "/toevoegen",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/addOefening.html",
+          controller: "addOefeningCtrl",
+        },
+      },
+    })
+    ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/oefeningen');
 });

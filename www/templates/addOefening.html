@@ -1,0 +1,28 @@
+<ion-nav-bar class="orange_theme">
+</ion-nav-bar>
+<div class="orange_theme">
+<ion-view title="Nieuwe oefening">
+    <ion-nav-buttons side="left">
+      <a class="button button-icon" href="#/app/oefeningen">Annuleer</a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <a class="button button-icon" href="#/app/toevoegen">Opslaan</a>
+    </ion-nav-buttons>
+  <ion-content class="has-header">
+    <h1>postlist</h1>
+
+    <div ng-app="ionicApp" ng-repeat="post in posts">
+		<div><span>{{post.id}} </span>{{post.post}}</div>
+	</div>
+		
+<div ng-controller="postCtrl">
+  <form novalidate class="simple-form">
+    Post: <input type="text" ng-model="post.text" /><br />
+    <button name="add" ng-click="input(post)">SAVE</button>
+  </form>
+<!--   <pre>master = {{master | json}}</pre>
+ --></div>
+
+  </ion-content>
+</ion-view>
+</div>

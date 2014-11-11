@@ -2,7 +2,10 @@
   <ion-content class="has-header">
 	  <header class="single">
 	  	<div class="head_score s{{oefeningen[stateParams[0].oefeningId].score}}"><div>{{oefeningen[stateParams[0].oefeningId].score}}</div></div>
-	  	<h1>{{oefeningen[stateParams[0].oefeningId].oefening}}</h1>
+	  	<div class="head_box">
+		  	<h1>{{oefeningen[stateParams[0].oefeningId].oefening}}</h1>
+		  	<span>{{oefeningen[stateParams[0].oefeningId].responsprev}}</span>
+	  	</div>
 	  </header>
 	  <div class="graph_header"></div>
 	  <div class="graph" data-graph="{{oefeningen[stateParams[0].oefeningId].details.all_scores}}">
