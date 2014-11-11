@@ -9,14 +9,14 @@ var sh = require('shelljs');
 var notify = require('gulp-notify');
 
 var paths = {
-  sass: ['./www/lib/ionic/scss/**/*.scss']
+  sass: ['./scss/**/*.scss']
 };
 
 gulp.task('default', ['watch']);
 
 gulp.task('sass', function() {
   gulp.src('./scss/ionic.app.scss')
-    .pipe(sass())
+    .pipe(sass({errLogToConsole: true}))
     .pipe(gulp.dest('./www/css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
