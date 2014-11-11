@@ -96,7 +96,10 @@ angular.module('starter.controllers', [])
 })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> master
 .controller('addOefeningCtrl',function ($scope,$http){
       $scope.master = {};
 
@@ -107,7 +110,11 @@ angular.module('starter.controllers', [])
         $http.post("server/insert.php",{'post': $scope.master.text})
         .success(function(data, status, headers, config){
             console.log("inserted Successfully");
+<<<<<<< HEAD
             console.log(data);
+=======
+            console.log(data); 
+>>>>>>> master
         });
       };
 
