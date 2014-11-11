@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 var oefeningen = [
     { oefening: 'Naar de wc gaan, zitten op de bril en een broodje eten',
       responsprev: 'Niet mijn handen wassen',
@@ -44,8 +46,10 @@ var oefeningen = [
   ];
   //console.log(oefeningen);
 
+>>>>>>> master
 angular.module('starter.controllers', [])
 
+// DEZE CONTROLLER MOET HERNOEMD EN GAAT DIT WERKEN MET SILVERSTRIPE?
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
   $scope.loginData = {};
@@ -79,6 +83,7 @@ angular.module('starter.controllers', [])
   };
 })
 
+// DEZE TWEE MOETEN NOG SAMENGEVOEGD WORDEN
 .controller('OefeningenCtrl', function($scope) {
   $scope.oefeningen = oefeningen;
 })
@@ -90,6 +95,11 @@ angular.module('starter.controllers', [])
   ]
 })
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
 .controller('addOefeningCtrl',function ($scope,$http){
       $scope.master = {};
 
@@ -100,7 +110,11 @@ angular.module('starter.controllers', [])
         $http.post("server/insert.php",{'post': $scope.master.text})
         .success(function(data, status, headers, config){
             console.log("inserted Successfully");
+<<<<<<< HEAD
+            console.log(data);
+=======
             console.log(data); 
+>>>>>>> master
         });
       };
 
@@ -117,7 +131,7 @@ angular.module('starter.controllers', [])
     console.error('ERR', err);
     // err.status will contain the status code
   });
-  
+
 })
 
 .controller('patientCtrl',function ($scope,$http){
@@ -127,7 +141,7 @@ angular.module('starter.controllers', [])
           console.log(data);
           $scope.list = data;
       });
-  
+
 })
 
 .controller('postCtrl',function ($scope,$http){
@@ -140,11 +154,12 @@ angular.module('starter.controllers', [])
         $http.post("server/insert.php",{'post': $scope.master.text})
         .success(function(data, status, headers, config){
             console.log("inserted Successfully");
-            console.log(data); 
+            console.log(data);
         });
       };
 
     // }]);
 });
 
+>>>>>>> master
 ;
