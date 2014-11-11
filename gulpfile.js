@@ -9,11 +9,12 @@ var sh = require('shelljs');
 var notify = require('gulp-notify');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./www/lib/ionic/scss/**/*.scss']
 };
 
+gulp.task('default', ['watch']);
 
-gulp.task('sass', function(done) {
+gulp.task('sass', function() {
   gulp.src('./scss/ionic.app.scss')
     .pipe(sass())
     .pipe(gulp.dest('./www/css/'))
@@ -48,6 +49,4 @@ gulp.task('git-check', function(done) {
   }
   done();
 });
-
-gulp.task('default', ['watch', 'sass']);
 
