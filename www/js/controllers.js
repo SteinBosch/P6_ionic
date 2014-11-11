@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 var oefeningen = [
     { oefening: 'Naar de wc gaan, zitten op de bril en een broodje eten',
       responsprev: 'Niet mijn handen wassen',
@@ -46,7 +44,6 @@ var oefeningen = [
   ];
   //console.log(oefeningen);
 
->>>>>>> master
 angular.module('starter.controllers', [])
 
 // DEZE CONTROLLER MOET HERNOEMD EN GAAT DIT WERKEN MET SILVERSTRIPE?
@@ -95,11 +92,6 @@ angular.module('starter.controllers', [])
   ]
 })
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
 .controller('addOefeningCtrl',function ($scope,$http){
       $scope.master = {};
 
@@ -110,11 +102,7 @@ angular.module('starter.controllers', [])
         $http.post("server/insert.php",{'post': $scope.master.text})
         .success(function(data, status, headers, config){
             console.log("inserted Successfully");
-<<<<<<< HEAD
             console.log(data);
-=======
-            console.log(data); 
->>>>>>> master
         });
       };
 
@@ -160,6 +148,4 @@ angular.module('starter.controllers', [])
 
     // }]);
 });
-
->>>>>>> master
 ;
